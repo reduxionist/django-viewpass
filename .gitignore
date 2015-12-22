@@ -1,0 +1,4 @@
+.idea
+*.pyc
+/dist/
+/django_viewpass.egg-info/
