@@ -12,6 +12,7 @@ class ViewPassMiddleware(object):
     object.
     """
 
+    # noinspection PyMethodMayBeStatic
     def process_request(self, request):
         """Grab viewpass information from request, if present.
 

@@ -12,6 +12,7 @@ def viewpass_url(context, perm):
     """Return a URL path for current path, viewpass-encoded with permission.
 
     Args:
+        context (Context): context of template tag
         perm (str): permission to grant
 
     Returns:

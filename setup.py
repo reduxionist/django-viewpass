@@ -17,7 +17,7 @@ setup(
         description='A Django app to provide access to protected resources via URL tokens.',
         long_description=README,
         url='https://github.com/joelburton/viewpass.git',
-        download_url = 'https://github.com/joelburton/django-viewpass/tarball/1.0.1',
+        download_url='https://github.com/joelburton/django-viewpass/tarball/1.0.1',
         author='Joel Burton',
         author_email='joel@joelburton.com',
         classifiers=[
