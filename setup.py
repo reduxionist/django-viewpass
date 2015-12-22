@@ -11,14 +11,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
         name='django-viewpass',
-        version='1.0',
+        version='1.0.1',
         packages=['viewpass'],
         include_package_data=True,
         license='GPL',  # example license
         description='A Django app to provide access to protected resources via URL tokens.',
         long_description=README,
         url='https://github.com/joelburton/viewpass.git',
-        download_url = 'https://github.com/joelburton/django-viewpass/tarball/1.0',
+        download_url = 'https://github.com/joelburton/django-viewpass/tarball/1.0.1',
         author='Joel Burton',
         author_email='joel@joelburton.com',
         classifiers=[
