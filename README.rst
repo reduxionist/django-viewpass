@@ -25,7 +25,6 @@ Installing
 
 Add 'viewpass' to the `INSTALLED_APPS`::
 
-
     INSTALLED_APPS = [
         # ...
         'viewpass',
@@ -47,21 +46,21 @@ we need a user!). A good arrangement could be::
 
 Add viewpass to the `AUTHENTICATION_BACKENDS`::
 
-  AUTHENTICATION_BACKENDS = [
-      'viewpass.backends.ViewPassBackend',
-      'django.contrib.auth.backends.ModelBackend'
-  ]
+    AUTHENTICATION_BACKENDS = [
+        'viewpass.backends.ViewPassBackend',
+        'django.contrib.auth.backends.ModelBackend'
+    ]
 
 .. TODO
 
-  should this stuff be added automatically via AppConfig?
+    should this stuff be added automatically via AppConfig?
 
 Generating Viewpass URLs
 ------------------------
 
 You can generate the proper URL for them by using the method `util.get_viewpass_url`, like::
 
-  get_viewpass_url('/report/', 'reporting.view_report')
+    get_viewpass_url('/report/', 'reporting.view_report')
 
 This URL will look like `/report/?viewpass=STRING1:STRING2` and visitors can use this URL to
 visit the `/report/` page.
@@ -70,15 +69,17 @@ The STRING1 and STRING2 are encoded versions of the timestamp/path/permission-to
 signed copy of the path/permission-to-grant, respectively. This prevents any tampering by users
 trying to re-use a viewpass URL to view another page or to change the permission granted.
 (The timestamp is not used but can be used to create time-limited URLs; you can edit the
-`signing.loads()` call in `viewpass.middleware.ViewPassMiddleware` to add a `max_age=<num_seconds>` parameter).
+`signing.loads()` call in `viewpass.middleware.ViewPassMiddleware` to add a
+`max_age=<num_seconds>` parameter).
 
 As a convenience, you can also use the template tag to generate the proper URL. On the template
 that is used by `/report/`, you can include::
 
-  {% load viewpass_tags %}
-  <a href="{% viewpass_url 'reporting.view_report' %}">Get public URL</a>
+    {% load viewpass_tags %}
+    <a href="{% viewpass_url 'reporting.view_report' %}">Get public URL</a>
 
 This will show a link with the viewpass URL on it.
+
 Credit
 ======
 

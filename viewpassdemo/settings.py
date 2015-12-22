@@ -1,5 +1,3 @@
-# Django settings for testtinymce project.
-
 from os.path import join, dirname, realpath
 
 ROOT_PATH = dirname(realpath(__file__))
@@ -38,6 +36,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'django.contrib.admin',
     'viewpass',
 )
