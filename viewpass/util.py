@@ -17,4 +17,10 @@ def get_viewpass_url(path, perm):
             permission to visit that URL.
     """
 
-    return "%s?viewpass=%s" % (path, signing.dumps([path, perm]))
+    token = signing.dumps([path, perm])
+
+    if "?" in path:
+        return path + "&viewpass=" + token
+
+    else:
+        return path + "?viewpass=" + token
