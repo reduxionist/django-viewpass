@@ -38,8 +38,15 @@ class ViewPassMiddleware(object):
             info = signing.loads(viewpass)
             path, permission = info
 
-            if path != request.get_full_path():
-                raise SuspiciousOperation("Viewpass URL does not match")
+            our_path = request.get_full_path()
+
+            # Strip off ?viewpass=... or &viewpass=... from the end
+            # (we know it will be at the end, since we put it there in our tag!)
+            our_path = our_path[:our_path.find("viewpass=")-1]
+
+            if path != our_path:
+                raise SuspiciousOperation(
+                        "Viewpass path %s does not match real %s" % (path, our_path))
 
             # noinspection PyBroadException
             try:
