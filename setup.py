@@ -16,7 +16,7 @@ setup(
         license='GPL',
         description='A Django app to provide access to protected resources via URL tokens.',
         long_description=README,
-        url='https://github.com/joelburton/viewpass.git',
+        url='https://github.com/joelburton/django-viewpass.git',
         download_url='https://github.com/joelburton/django-viewpass/tarball/1.0.5',
         author='Joel Burton',
         author_email='joel@joelburton.com',
